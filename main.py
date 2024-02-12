@@ -9,7 +9,7 @@ if not os.path.isfile(hrefs_file):
     pd.DataFrame(columns=['links']).to_csv(hrefs_file, index=False)
 if not os.path.isfile(texts_file):
     pd.DataFrame(columns=['titles']).to_csv(texts_file, index=False)
-base_url = "https://api.telegram.org/bot6853528823:AAE4p-zFzNLdJoREhhRAbYmA_7mgjKqhWQs/sendMessage?chat_id=-4103221629&text={}"
+base_url = "https://api.telegram.org/your_bot_id/sendMessage?chat_id=your_chat_id&text={}"
 def send_to_telegram(text, href):
     text = text.replace('&', 'and')
     href = href.replace('&', 'and')
