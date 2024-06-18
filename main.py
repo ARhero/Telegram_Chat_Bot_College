@@ -2,7 +2,7 @@ import requests
 from bs4 import BeautifulSoup
 import pandas as pd
 import os
-requests.get("https://api.telegram.org/bot6853528823:AAE4p-zFzNLdJoREhhRAbYmA_7mgjKqhWQs/sendMessage?chat_id=-4103221629&text='bot is on now'")
+requests.get("https://api.telegram.org/bot<sampleBotID>:AAE4p-zFzNLdJoREhhRAbYmA_7mgjKqhWQs/sendMessage?chat_id=<sampleChatID>&text='bot is on now'")
 url = 'https://www.soa.ac.in/iter'
 hrefs_file = 'hrefs.csv'
 texts_file = 'texts.csv'
@@ -10,8 +10,8 @@ if not os.path.isfile(hrefs_file):
     pd.DataFrame(columns=['links']).to_csv(hrefs_file, index=False)
 if not os.path.isfile(texts_file):
     pd.DataFrame(columns=['titles']).to_csv(texts_file, index=False)
-base_url = "https://api.telegram.org/bot6853528823:AAE4p-zFzNLdJoREhhRAbYmA_7mgjKqhWQs/sendMessage?chat_id=-1001719304073&text={}"
-base_url2 = "https://api.telegram.org/bot6853528823:AAE4p-zFzNLdJoREhhRAbYmA_7mgjKqhWQs/sendMessage?chat_id=-1001609971210&text={}"
+base_url = "https://api.telegram.org/bot<sampleBotID>:AAE4p-zFzNLdJoREhhRAbYmA_7mgjKqhWQs/sendMessage?chat_id=<sampleChatID>&text={}"
+base_url2 = "https://api.telegram.org/bot<sampleBotID>:AAE4p-zFzNLdJoREhhRAbYmA_7mgjKqhWQs/sendMessage?chat_id=<sampleChatID>&text={}"
 def send_to_telegram(text, href):
     text = text.replace('&', 'and')
     href = href.replace('&', 'and')
